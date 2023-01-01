@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Change Background Color Using Javascript</title>
+    </head>
+    <style>
+        #main{
+            background-color: red;
+        }
+    </style>
+    <body id="main">
+        <center>
+        <h1>Change Background Color Using Javascript</h1>
+        <button onclick="changecolor()">Click Me</button>
+        </center>
+    </body>
+    <script>
+        function changecolor() {
+            document.getElementById("main").style.backgroundColor = "green";
+        }
+    </script>
+</html>
