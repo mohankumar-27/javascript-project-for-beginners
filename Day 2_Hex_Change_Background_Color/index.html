@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hex Change Bachground Color</title>
+    </head>
+    <style>
+        #main{
+            background-color: #ffffff;
+        }
+    </style>
+    <body id="main">
+        <center>
+        <h1>Background Change Color With Hex Value</h1>
+        <button onclick="changeColor()">Click Me</button>
+        <h3>Current Color is <span id="bcolor">#ffffff</span></h3>
+        </center>
+    </body>
+    <script>
+        const text="0123456789abcdef";
+        function hexcolor(){
+            hex="#";
+            //for loop
+            for (let i=0; i<6; i++){
+                hex += text.charAt(Math.floor(Math.random()* 16))
+            }
+            return hex;
+        }
+        function changeColor(){
+            var hex = hexcolor()
+            // console.log(hex);
+            document.getElementById("main").style.backgroundColor = hex;
+            document.getElementById("bcolor").innerHTML = hex;
+        }
+    </script>
+</html>
