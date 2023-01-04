@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pass The Message</title>
+        <style>
+            body{
+                background-color: #78e08f;
+                display: flex;
+                justify-content: center;
+            }
+            .container{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+               
+            }
+            .box{
+                background-color: white;
+                border-radius: 5px;
+                align-items: center;
+                padding: 10px;   
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <div class="box">
+            <h1>Message You Like To Send</h1>
+            <div class="inp-sec">
+                <input id="message-input" type="text" placeholder="Enter your Message">
+                <button onclick="passmessage()">Send Message</button>
+            </div>
+            <div class="display-message">
+                <h2>Message Delivered</h2>
+                <ul id="send-message">
+                    <li id="no-msg">No Message</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </body>
+    <script>
+        const msg_list = document.getElementById("send-message")
+        const msg_input = document.getElementById("message-input")
+        const no_msg = document.getElementById("no-msg")
+        function passmessage() {
+            console.log(msg_input.value);
+
+            linode = document.createElement("li");
+            textNode = document.createTextNode(msg_input.value);
+
+            linode.appendChild(textNode);
+            console.log(linode);
+
+            msg_list.appendChild(linode);
+
+            // clear the input
+
+        msg_input.value = "";
+
+        msg_list.removeChild(no_msg);
+        }
+    </script>
+</html>
