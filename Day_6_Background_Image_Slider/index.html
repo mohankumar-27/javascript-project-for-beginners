@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Background Image Slider</title>
+    </head>
+    <style>
+        .container{
+            height: 500px;
+            width: 500px;
+            display: flex;
+            align-items: center;
+        }
+        .img-container{
+            height: 500px;
+            width: 600px;
+        }
+    </style>
+    <body>
+        <h1>Background Image Slider</h1>
+        <div class="container">
+                <button class="btn-left" onclick="leftbtn()">Left</button>
+                <div class="img-container"></div>
+                <button class="btn-right"onclick="rightbtn()">Right</button>
+        </div>
+    </body>
+    <script>
+        const pictures =[
+            "0","1","2","3","4"
+        ];
+        const ImageDiv = document.querySelector('.img-container')
+         var value = 0;
+         function leftbtn(){
+            value--;
+            if (value < 0){
+                value = pictures.length-1
+            }
+            //console.log(value)
+            
+            ImageDiv.style.backgroundImage = `url('${pictures[value]}.jpeg')`;
+        }
+        function rightbtn(){
+            value++;
+            if (value > pictures.length-1){
+                value=0
+            }
+            //console.log(value)
+            ImageDiv.style.backgroundImage = `url('${pictures[value]}.jpeg')`;
+            //console.log(pictures.length)
+        }
+        ImageDiv.style.backgroundImage = `url('${pictures[value]}.jpeg')`;
+        ;
+    </script>
+</html>
